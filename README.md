@@ -3,7 +3,6 @@
 > Extração automatizada de demonstrativos contábeis da ANS (Agência Nacional de Saúde Suplementar)
 
 [![Python Version](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 ## 📋 Sobre o Projeto
 
@@ -28,7 +27,7 @@ Este projeto automatiza o processo de extração, transformação e consolidaç�
 
 1. Clone o repositório:
 ```bash
-git clone <url-do-repositorio>
+git clone https://github.com/Vinitanakagui/ans-web-scraping.git
 cd ans-data-extractor
 ```
 
@@ -103,24 +102,3 @@ O arquivo `data_concat.csv` contém todos os dados filtrados de "Eventos / Sinis
 - Necessário espaço em disco adequado
 - Processamento pode levar alguns minutos
 
-## 📝 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
-
-## 🤝 Contribuindo
-
-Contribuições são bem-vindas!
-
-1. Fork o projeto
-2. Crie sua feature branch (`git checkout -b feature/NovaFuncionalidade`)
-3. Commit suas mudanças (`git commit -m 'Adiciona nova funcionalidade'`)
-4. Push para a branch (`git push origin feature/NovaFuncionalidade`)
-5. Abra um Pull Request
-
-## 📧 Contato
-
-Para dúvidas ou sugestões, abra uma [issue](../../issues).
-
----
-
-⭐ Se este projeto foi útil, considere dar uma estrela!
