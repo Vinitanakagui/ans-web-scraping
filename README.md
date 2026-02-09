@@ -1,77 +1,126 @@
-ANS Data Extractor
-Projeto para extração, transformação e análise de dados contábeis da ANS (Agência Nacional de Saúde Suplementar).
-📋 Descrição
-Este projeto automatiza o processo de:
+# ANS Data Extractor
 
-Download de demonstrativos contábeis da ANS
-Extração de arquivos ZIP
-Filtragem de dados específicos (Eventos/Sinistros)
-Consolidação de múltiplos trimestres em um único arquivo
+> Extração automatizada de demonstrativos contábeis da ANS (Agência Nacional de Saúde Suplementar)
 
-🚀 Funcionalidades
+[![Python Version](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-Extração Automática: Baixa demonstrativos contábeis de trimestres específicos
-Processamento Inteligente: Identifica automaticamente separadores em arquivos CSV
-Filtragem de Dados: Filtra apenas informações relacionadas a "Eventos / Sinistros"
-Consolidação: Concatena dados de múltiplos trimestres em um único arquivo
+## 📋 Sobre o Projeto
 
-📦 Instalação
-Pré-requisitos
+Este projeto automatiza o processo de extração, transformação e consolidação de dados contábeis da ANS, focando em informações sobre Eventos e Sinistros.
 
-Python 3.7 ou superior
+### Funcionalidades
 
-Passos de Instalação
+- ✅ Download automático de demonstrativos contábeis
+- ✅ Extração de arquivos ZIP
+- ✅ Detecção inteligente de separadores CSV
+- ✅ Filtragem de dados específicos (Eventos/Sinistros)
+- ✅ Consolidação de múltiplos trimestres
 
-Clone ou baixe este repositório
-Instale as dependências:
+## 🚀 Início Rápido
 
-bashpip install -r requirements.txt
+### Pré-requisitos
 
-💻 Uso
+- Python 3.7 ou superior
+- pip (gerenciador de pacotes Python)
+
+### Instalação
+
+1. Clone o repositório:
+```bash
+git clone <url-do-repositorio>
+cd ans-data-extractor
+```
+
+2. Instale as dependências:
+```bash
+pip install -r requirements.txt
+```
+
+### Uso
+
 Execute o script principal:
-bashpython main.py
-O que o script faz:
 
-Busca os últimos 3 trimestres de dados disponíveis
-Baixa os arquivos ZIP para a pasta demostrativos_contabeis/
-Extrai os arquivos automaticamente
-Filtra dados relacionados a "Eventos / Sinistros"
-Gera o arquivo consolidado data_concat.csv
+```bash
+python main.py
+```
 
+O script irá:
+1. Buscar os últimos 3 trimestres disponíveis
+2. Baixar os arquivos ZIP
+3. Extrair automaticamente
+4. Filtrar dados de "Eventos / Sinistros"
+5. Gerar `data_concat.csv` consolidado
 
-Personalização
-Para alterar a quantidade de trimestres a serem baixados, edite a linha no arquivo main.py:
-pythontrimestres = ans_extract.obter_trimestres(3)  # Altere o número aqui
+### Configuração
 
-🔧 Componentes
-ANSExtract (ans_extract.py)
-Responsável por:
+Altere a quantidade de trimestres em `main.py`:
 
-Navegar na estrutura de diretórios da ANS
-Identificar trimestres disponíveis
-Baixar arquivos ZIP
-Extrair arquivos compactados
+```python
+trimestres = ans_extract.obter_trimestres(3)  # Altere o número
+```
 
-ANSTransform (ans_transform.py)
-Responsável por:
+## 📁 Estrutura do Projeto
 
-Detectar tipos de arquivo (CSV, TXT, XLSX)
-Identificar separadores automaticamente
-Filtrar dados específicos
-Concatenar múltiplos arquivos
+```
+ans-data-extractor/
+│
+├── ans_extract.py           # Extração e download
+├── ans_transform.py         # Transformação e filtragem
+├── main.py                  # Script principal
+├── requirements.txt         # Dependências
+├── README.md               # Documentação
+└── demostrativos_contabeis/ # Dados (gerado automaticamente)
+```
 
-📊 Saída
-O arquivo final data_concat.csv contém todos os dados filtrados de "Eventos / Sinistros" dos trimestres processados.
-🛠️ Tecnologias Utilizadas
+## 🔧 Módulos
 
-requests: Download de arquivos
-BeautifulSoup4: Parsing de HTML
-pandas: Manipulação de dados
-zipfile: Descompactação de arquivos
+### `ANSExtract`
+- Navegação na estrutura de diretórios da ANS
+- Download de arquivos ZIP
+- Extração de arquivos compactados
 
-⚠️ Observações
+### `ANSTransform`
+- Detecção de tipos de arquivo (CSV, TXT, XLSX)
+- Identificação automática de separadores
+- Filtragem e concatenação de dados
 
-Os arquivos são baixados para a pasta demostrativos_contabeis/
-O processamento pode levar alguns minutos dependendo do tamanho dos arquivos
-Certifique-se de ter espaço em disco suficiente
-É necessária conexão com a internet para o download
+## 🛠️ Tecnologias
+
+- [Python](https://www.python.org/) - Linguagem de programação
+- [Requests](https://requests.readthedocs.io/) - HTTP requests
+- [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/) - Web scraping
+- [Pandas](https://pandas.pydata.org/) - Análise de dados
+- [OpenPyXL](https://openpyxl.readthedocs.io/) - Manipulação de Excel
+
+## 📊 Saída
+
+O arquivo `data_concat.csv` contém todos os dados filtrados de "Eventos / Sinistros" consolidados.
+
+## ⚠️ Observações
+
+- Requer conexão com internet
+- Necessário espaço em disco adequado
+- Processamento pode levar alguns minutos
+
+## 📝 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## 🤝 Contribuindo
+
+Contribuições são bem-vindas!
+
+1. Fork o projeto
+2. Crie sua feature branch (`git checkout -b feature/NovaFuncionalidade`)
+3. Commit suas mudanças (`git commit -m 'Adiciona nova funcionalidade'`)
+4. Push para a branch (`git push origin feature/NovaFuncionalidade`)
+5. Abra um Pull Request
+
+## 📧 Contato
+
+Para dúvidas ou sugestões, abra uma [issue](../../issues).
+
+---
+
+⭐ Se este projeto foi útil, considere dar uma estrela!
